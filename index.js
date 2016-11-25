@@ -13,5 +13,14 @@ function deepestChild(){
 }
 
 function increaseRankBy(n){
-    return n+parseInt(document.getElementById('app').querySelectorAll('ul.ranked-list li')[0].innerHTML,10);
+//find the level
+  let node = document.querySelectorAll('.ranked-list')
+
+  for(let i=0,l = node.length; i<l; i++){
+    let nextNode = node[i].children
+
+      for(let j=0,k = nextNode.length; j<k; j++){
+      nextNode[j].innerHTML = parseInt(nextNode[j].innerHTML) + n;
+    }
+  }
 }
